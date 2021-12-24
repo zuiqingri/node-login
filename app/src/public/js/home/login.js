@@ -1,3 +1,3 @@
 "use strict";
 
-console.log("OK!");
+console.log("Hello nodemon!");
