@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const logger = require("./src/config/logger");
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.static(`${__dirname}/src/public`));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan("tiny", { stream: logger.stream }));
 // app.use(morgan("dev"));
 // app.use(morgan("common", { stream: accessLogStream }));
 

@@ -20,7 +20,7 @@ class User {
       }
       return { success: false, msg: "There is not ID" };
     } catch (err) {
-      return { success: false, msg: err };
+      return { success: false, err };
     }
   }
 
@@ -30,7 +30,7 @@ class User {
       const response = await UserStorage.save(client);
       return response;
     } catch (err) {
-      return { success: false, msg: err };
+      return { success: false, err };
     }
   }
 }
